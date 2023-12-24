@@ -3,19 +3,28 @@
   <div class="hello">
     <img class="mainImg" src="../assets/main-page.png">
     <div class="text">
-      <p class="main_title">Каслинское художественное литье из чугуна.</p><br>
+      <p class="main_title">Каслинское художественное литье из чугуна</p><br>
       <p class="sub_title_main">Из собрания Челябинского государственного музея<br>изобразительных искусств</p>
+      <button @click="goExhibition" class="btnStart">Коллекция</button>
     </div>
+
   </div>
+
 </div>
 </template>
 
 <script>
+import router from "@/router";
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: 'HeadPage',
+
+  methods:{
+    goExhibition(){
+      router.push({name: 'ListItems'})
+    }
   }
+
 }
 </script>
 
@@ -43,13 +52,14 @@ a {
 }
 
 .main_title{
-  font-family: Montserat, sans-serif;
-  font-size: 60px;
+  font-family: Montserrat, sans-serif;
+  font-size: 70px;
+  font-weight: bold;
   color: #d0a103;
 }
 
 .sub_title_main{
-  font-family: Montserat, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 35px;
   color: #d0a103;
 }
@@ -67,7 +77,7 @@ a {
   height: 700px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
 }
 
 .subTitle{
@@ -79,5 +89,16 @@ float: left;
 }
 .main_title{
 
+}
+
+.btnStart{
+  color: white;
+  width: 180px;
+  height: 45px;
+  background-color: #d0a103;
+  border-radius: 5px;
+  border: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
 }
 </style>
